@@ -14,3 +14,23 @@ h1 {
 p {
     font-size: 1.2em;
 }
+
+/* Define the button class */
+.button {
+    display: inline-block; /* Makes the link behave like a button */
+    padding: 10px 20px; /* Adds padding for the button */
+    font-size: 16px; /* Sets the font size */
+    color: white; /* Text color */
+    background-color: #007BFF; /* Button background color (blue) */
+    border: none; /* Removes any default borders */
+    border-radius: 5px; /* Rounds the corners of the button */
+    text-align: center; /* Centers text inside the button */
+    text-decoration: none; /* Removes underline from the link */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

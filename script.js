@@ -1,0 +1,1 @@
+document.getElementById('message').textContent = 'Hello, this site is powered by JavaScript!';

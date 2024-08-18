@@ -34,3 +34,23 @@ p {
 .button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
+
+/* Ensure the button has no border or padding */
+feedButton {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Style for the image inside the button */
+feedButton img {
+    width: 500px; /* Set the initial width */
+    height: auto; /* Maintain aspect ratio */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Change image on hover */
+feedButton:hover img {
+    content: url('../img/catopen.png'); /* Path to the image for hover effect */
+}

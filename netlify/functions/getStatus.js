@@ -7,14 +7,12 @@ exports.handler = async (event, context) => {
       const statusData = fs.readFileSync(statusFile);
       return {
         statusCode: 200,
-        //body: statusData,
-      body: JSON.stringify({ status: 'gruubbo' }), // Default status
-
+        body: statusData,
       };
     }
     return {
       statusCode: 200,
-      body: JSON.stringify({ status: 'green' }), // Default status
+      body: JSON.stringify({ status: 'red' }), // Default status
     };
   } catch (error) {
     return {

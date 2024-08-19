@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
-  const jsonbinUrl = 'https://api.jsonbin.io/v3/b/<PUBLIC_BIN_ID>/latest';
+  const jsonbinUrl = 'https://api.jsonbin.io/v3/b/66c2da1cad19ca34f8980357/latest';
 
   try {
     const response = await fetch(jsonbinUrl, {

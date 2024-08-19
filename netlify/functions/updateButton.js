@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
-  const jsonbinUrl = 'https://api.jsonbin.io/v3/b/66c2daaaad19ca34f898037c'; // Public bin URL
+  const jsonbinUrl = 'https://api.jsonbin.io/v3/b/66c2da1cad19ca34f8980357'; // Public bin URL
 
   if (event.httpMethod === 'POST') {
     let status = 'red'; // Default color

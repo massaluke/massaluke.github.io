@@ -54,3 +54,11 @@ feedButton img {
 feedButton:hover img {
     content: url('../img/catopen.png'); /* Path to the image for hover effect */
 }
+
+/* Color Changing Square */
+#colorSquare {
+    width: 100px;
+    height: 100px;
+    background-color: red; /* Default color */
+    border: 2px solid black;
+}

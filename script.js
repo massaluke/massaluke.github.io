@@ -24,4 +24,4 @@ function updateSquareColor() {
 }
 
 // Call updateSquareColor every second
-setInterval(updateSquareColor, 1000);
+setInterval(updateSquareColor, 10000);

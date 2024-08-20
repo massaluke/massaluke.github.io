@@ -2,6 +2,8 @@ const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
   const jsonbinUrl = 'https://api.jsonbin.io/v3/b/66c2da1cad19ca34f8980357'; // Public bin URL
+  const pushoverUserKey = process.env.uf9x4sd873yaksumd7en71ud4d26yh;
+  const pushoverApiToken = process.env.LukePhone;
 
   if (event.httpMethod === 'POST') {
     let status = 'red'; // Default color
@@ -24,6 +26,10 @@ exports.handler = async (event, context) => {
 
       if (response.ok) {
         const result = await response.json();
+
+        // Send a Pushover notification
+        await sendPushoverNotification(status);
+
         return {
           statusCode: 200,
           body: JSON.stringify({ message: 'Button status updated', status }),
@@ -74,3 +80,35 @@ exports.handler = async (event, context) => {
     body: JSON.stringify({ message: 'Method not allowed' }),
   };
 };
+
+// Function to send Pushover notification
+async function sendPushoverNotification(status) {
+  const pushoverUserKey = process.env.PUSHOVER_USER_KEY;
+  const pushoverApiToken = process.env.PUSHOVER_API_TOKEN;
+
+  const title = `Button Status Updated`;
+  const message = `The button status has been updated to ${status}.`;
+
+  try {
+    const pushoverResponse = await fetch('https://api.pushover.net/1/messages.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        token: pushoverApiToken,
+        user: pushoverUserKey,
+        title: title,
+        message: message,
+      }),
+    });
+
+    if (pushoverResponse.ok) {
+      console.log('Pushover notification sent successfully');
+    } else {
+      console.error('Failed to send Pushover notification');
+    }
+  } catch (error) {
+    console.error('Error sending Pushover notification:', error.message);
+  }
+}

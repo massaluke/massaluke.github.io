@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 exports.handler = async (event, context) => {
   const jsonbinUrl = 'https://api.jsonbin.io/v3/b/66c2da1cad19ca34f8980357'; // Public bin URL
   const pushoverUserKey = process.env.uf9x4sd873yaksumd7en71ud4d26yh;
-  const pushoverApiToken = process.env.LukePhone;
+  const pushoverApiToken = process.env.ant9wqy4dtuvrozrmb89z4cja1i392;
 
   if (event.httpMethod === 'POST') {
     let status = 'red'; // Default color

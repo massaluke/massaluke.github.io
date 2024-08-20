@@ -9,7 +9,7 @@ function navigateToPage(url) {
 }
 
 // Function to update square color based on response
-function updateSquareColor() {
+function updateSquareColour() {
     fetch('/.netlify/functions/getStatus')
         .then(response => response.json())
         .then(data => {
@@ -24,4 +24,4 @@ function updateSquareColor() {
 }
 
 // Call updateSquareColor every second
-//setInterval(updateSquareColor, 10000);
+//setInterval(updateSquareColour, 10000);
